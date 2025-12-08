@@ -4,10 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>AYA Mesh Co. Ltd | Enterprise Infrastructure & Medical Technology</title>
+<title>AYA Mesh Co. Ltd | Infrastructure, Cloud & Medical Technology</title>
+
+<meta name="description" content="AYA Mesh Co. Ltd delivers enterprise infrastructure, cloud engineering, automation software, and medical imaging device solutions." />
 
 <style>
-/* ================= CORE THEME ================= */
+/* ================= THEME ================= */
 :root{
   --bg:#ffffff;
   --text:#0f172a;
@@ -37,9 +39,20 @@ body{
   padding:0 28px;
 }
 
-/* ================= NAV ================= */
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.reveal{
+  animation:fadeUp 0.9s ease both;
+}
+
+/* ============ NAV ============ */
 header{
-  background:#fff;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
@@ -64,15 +77,13 @@ nav{
 }
 
 nav a{
-  margin-left:34px;
+  margin-left:32px;
   font-size:0.95rem;
   color:var(--muted);
   text-decoration:none;
 }
 
-nav a:hover{
-  color:var(--primary);
-}
+nav a:hover{ color:var(--primary); }
 
 .toggle{
   display:none;
@@ -80,10 +91,10 @@ nav a:hover{
   cursor:pointer;
 }
 
-/* ================= HERO ================= */
+/* ============ HERO ============ */
 .hero{
-  padding:110px 0 90px;
-  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  padding:120px 0;
+  background:linear-gradient(180deg,#ffffff,#f1f5f9);
 }
 
 .hero h1{
@@ -93,24 +104,24 @@ nav a:hover{
 }
 
 .hero p{
-  margin-top:22px;
+  margin-top:24px;
   font-size:1.08rem;
-  max-width:760px;
+  max-width:780px;
   color:var(--muted);
 }
 
 .btn{
   display:inline-block;
-  margin-top:36px;
+  margin-top:38px;
   background:var(--primary);
   color:#fff;
-  padding:14px 26px;
-  border-radius:6px;
+  padding:14px 28px;
+  border-radius:8px;
   font-size:0.95rem;
   text-decoration:none;
 }
 
-/* ================= SECTIONS ================= */
+/* ============ SECTIONS ============ */
 .section{
   padding:100px 0;
 }
@@ -125,70 +136,58 @@ nav a:hover{
   color:var(--muted);
 }
 
-/* ================= CARDS ================= */
+/* ============ CARDS ============ */
 .cards{
-  margin-top:50px;
+  margin-top:52px;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:34px;
+  gap:36px;
 }
 
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:36px;
+  border-radius:16px;
+  padding:38px;
 }
 
-.card h3{
-  font-size:1.1rem;
-  margin-bottom:10px;
-}
-
-.card span{
-  font-size:0.95rem;
-  color:var(--muted);
-}
-
-/* ================= HEALTHCARE ================= */
+/* ============ HEALTHCARE ============ */
 .health{
   background:#f9fafb;
 }
 
-/* ================= WHY ================= */
-.why{
+/* ============ INDUSTRIES ============ */
+.industries{
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+}
+
+.industry{
+  padding:30px;
+  border-left:4px solid var(--accent);
+  background:white;
+  border-radius:10px;
+}
+
+/* ============ COMPLIANCE ============ */
+.compliance{
   background:var(--primary);
   color:#fff;
 }
 
-.why-grid{
-  margin-top:42px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:32px;
-}
+.compliance p{ color:#e5e7eb; }
 
-.why-box{
-  background:rgba(255,255,255,0.08);
-  padding:32px;
-  border-radius:12px;
-  font-size:0.95rem;
-}
-
-/* ================= FOOTER ================= */
+/* ============ FOOTER ============ */
 footer{
   border-top:1px solid var(--border);
-  padding:34px 0;
+  padding:36px 0;
   font-size:0.85rem;
   color:var(--muted);
   text-align:center;
 }
 
-/* ================= MOBILE ================= */
+/* ============ MOBILE ============ */
 @media(max-width:900px){
-  .hero h1{
-    font-size:2.3rem;
-  }
+  .hero h1{ font-size:2.3rem; }
 }
 
 @media(max-width:768px){
@@ -202,23 +201,18 @@ footer{
     flex-direction:column;
     border-bottom:1px solid var(--border);
   }
-
   nav a{
     padding:18px 28px;
     border-top:1px solid var(--border);
     margin:0;
   }
-
-  .toggle{
-    display:block;
-  }
+  .toggle{ display:block; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAV ================= -->
 <header>
   <div class="container nav">
     <div class="logo">AYA Mesh Co. Ltd</div>
@@ -226,132 +220,94 @@ footer{
     <nav id="nav">
       <a href="#">Home</a>
       <a href="#services">Services</a>
-      <a href="#healthcare">Healthcare</a>
+      <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="container">
+  <div class="container reveal">
     <h1>
-      Enterprise Infrastructure, Cloud Engineering <br/>
-      & Medical Technology Solutions
+      Enterprise Infrastructure, Cloud Engineering  
+      & Medical Technology Software
     </h1>
     <p>
-      AYA Mesh Co. Ltd designs and delivers secure digital infrastructure,
-      automation platforms, and medical device software for
-      enterprises, healthcare providers, and technology partners.
+      AYA Mesh Co. Ltd delivers secure, scalable digital infrastructure,
+      automation platforms, and medical imaging software for
+      mission-critical environments.
     </p>
-    <a href="#services" class="btn">View Core Capabilities</a>
+    <a href="#services" class="btn">Explore Our Capabilities</a>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
 <section id="services" class="section">
-  <div class="container">
-    <h2>Core Technology Services</h2>
+  <div class="container reveal">
+    <h2>Core Services</h2>
     <p>
-      We focus on long-term reliability, regulatory awareness, and
-      security-first system design across critical industries.
+      We engineer systems where reliability, security, and long-term
+      maintainability are mandatory — not optional.
     </p>
 
     <div class="cards">
-      <div class="card">
-        <h3>On-Prem & Private Cloud Infrastructure</h3>
-        <span>Fully controlled, secure environments for sensitive workloads</span>
-      </div>
-
-      <div class="card">
-        <h3>Cloud & Hybrid Architecture</h3>
-        <span>Vendor-neutral cloud migration and optimization</span>
-      </div>
-
-      <div class="card">
-        <h3>ERP & Enterprise Automation</h3>
-        <span>Business process automation and system integration</span>
-      </div>
-
-      <div class="card">
-        <h3>Mobile Application Development</h3>
-        <span>Enterprise-grade Android and iOS solutions</span>
-      </div>
-
-      <div class="card">
-        <h3>IoT & Smart Ticketing Platforms</h3>
-        <span>Connected devices, data pipelines, and monitoring</span>
-      </div>
-
-      <div class="card">
-        <h3>Infrastructure & Cyber Security</h3>
-        <span>Network design, access control, compliance, and monitoring</span>
-      </div>
+      <div class="card">On-Prem & Private Cloud Infrastructure</div>
+      <div class="card">Cloud & Hybrid Architecture</div>
+      <div class="card">ERP & Automation Platforms</div>
+      <div class="card">IoT & Smart Ticketing Systems</div>
+      <div class="card">Infrastructure & Cyber Security</div>
     </div>
   </div>
 </section>
 
-<!-- ================= HEALTHCARE ================= -->
-<section id="healthcare" class="section health">
-  <div class="container">
-    <h2>Medical Imaging Devices & Automation Software</h2>
+<section class="section health">
+  <div class="container reveal">
+    <h2>Medical Imaging & Healthcare Automation</h2>
     <p>
-      AYA Mesh develops software platforms and control systems
-      for medical imaging devices and healthcare automation,
-      designed with reliability, safety, and compliance in mind.
+      Software solutions for medical imaging devices and healthcare automation,
+      designed with operational safety and system integrity in mind.
     </p>
 
     <div class="cards">
-      <div class="card">
-        <h3>Medical Imaging Device Software</h3>
-        <span>
-          Embedded and application-level software for imaging,
-          diagnostics, data acquisition, and device control
-        </span>
-      </div>
-
-      <div class="card">
-        <h3>Healthcare Automation Systems</h3>
-        <span>
-          Workflow automation, device integration, and operational efficiency
-          platforms for clinical environments
-        </span>
-      </div>
-
-      <div class="card">
-        <h3>Secure Medical Data Handling</h3>
-        <span>
-          Architecture for compliant data storage, transmission,
-          and system isolation
-        </span>
-      </div>
+      <div class="card">Medical Imaging Device Software</div>
+      <div class="card">Healthcare Automation Platforms</div>
+      <div class="card">Secure Medical Data Architecture</div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHY ================= -->
-<section class="section why">
-  <div class="container">
-    <h2>Why AYA Mesh</h2>
+<section id="industries" class="section industries">
+  <div class="container reveal">
+    <h2>Industries We Serve</h2>
 
-    <div class="why-grid">
-      <div class="why-box">Security-first system architecture</div>
-      <div class="why-box">Vendor-neutral and long-term design</div>
-      <div class="why-box">Experience with sensitive & regulated systems</div>
-      <div class="why-box">Engineering-driven, not marketing-driven</div>
+    <div class="cards">
+      <div class="industry">🏥 Healthcare & Hospitals</div>
+      <div class="industry">🧪 Medical Device Manufacturers (OEM)</div>
+      <div class="industry">🏢 Enterprise IT & Data Centers</div>
+      <div class="industry">🏛 Government & Public Sector</div>
     </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section class="section compliance">
+  <div class="container reveal">
+    <h2>Quality, Security & Compliance Mindset</h2>
+    <p>
+      AYA Mesh follows secure-by-design engineering principles and
+      industry best practices. Our systems are developed with
+      auditability, data protection, and operational safety in mind,
+      aligned with applicable standards and regulatory environments.
+    </p>
+  </div>
+</section>
+
 <footer id="contact">
   © 2025 AYA Mesh Co. Ltd. All rights reserved.
 </footer>
 
 <script>
 function toggleMenu(){
-  const nav = document.getElementById("nav");
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  const nav=document.getElementById("nav");
+  nav.style.display = nav.style.display==="flex"?"none":"flex";
 }
 </script>
 
