@@ -1,440 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AYAMesh - Empowering Your Digital Future</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background: #f4f4f9;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        header {
-            background: #111827;
-            color: #fff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-        }
-
-        nav a {
-            margin-left: 25px;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #10b981;
-        }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1612831669784-d1b85ff589e2?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-            padding: 140px 20px;
-            position: relative;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(17, 24, 39, 0.65);
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            margin-top: 25px;
-            background: #10b981;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: #059669;
-        }
-
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: #555;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: #fff;
-            padding: 35px 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(40px);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: #10b981;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: #111827;
-        }
-
-        /* Pricing */
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .pricing-card h3 {
-            margin-bottom: 15px;
-        }
-
-        .pricing-card p.price {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .pricing-card ul li {
-            margin: 10px 0;
-        }
-
-        /* Clients */
-        .clients {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .clients img {
-            max-width: 120px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .clients img:hover {
-            opacity: 1;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
-            display: none;
-        }
-
-        .testimonial-card.active {
-            display: block;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-        }
-
-        footer {
-            background: #111827;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        footer a {
-            color: #10b981;
-            margin: 0 8px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AYA Mesh Co. Ltd | Secure Digital Infrastructure</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 
 <body>
+<header>
+  <div class="container navbar">
+    <h1 class="logo">AYA Mesh</h1>
 
-    <header>
-        <h1>AYAMesh</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#clients">Clients</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Empowering Your Digital Future</h2>
-            <p>AYAMesh delivers innovative software development, ERP, system integration, and cloud & on-prem solutions tailored for your business success.</p>
-            <a href="#services" class="btn-primary">Explore Services</a>
-        </div>
-    </section>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="btn">Contact</a>
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+  </div>
+</header>
 
-    <section id="about" class="section">
-        <h2>About AYAMesh</h2>
-        <p>
-            At AYAMesh, we bridge technology and business. From enterprise software development to seamless system integration and cloud solutions, we help companies thrive in a digital-first world.
-        </p>
-    </section>
+<section class="hero">
+  <div class="container">
+    <h2>Digital Infrastructure. Cloud. Security.</h2>
+    <p>
+      We design, deploy, and secure enterprise-grade digital ecosystems —
+      from on-prem private cloud to IoT ticketing platforms.
+    </p>
+    <a href="services.html" class="btn large">Our Expertise</a>
+  </div>
+</section>
 
-    <section id="services" class="section">
-        <h2>Our Expertise</h2>
-        <div class="features">
-            <div class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Custom Software Development</h3>
-                <p>High-performance web & mobile applications with clean UI/UX.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-network-wired"></i>
-                <h3>ERP & System Integration</h3>
-                <p>Streamline operations with integrated ERP solutions and connectivity.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud & On-Prem Solutions</h3>
-                <p>Flexible deployment with secure cloud or on-premise solutions.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Networking & Security</h3>
-                <p>Enterprise-grade network design, monitoring, firewalls, and cybersecurity.</p>
-            </div>
-        </div>
-    </section>
+<section class="services-preview">
+  <div class="container grid">
+    <div class="card">On-Prem & Private Cloud</div>
+    <div class="card">Cloud & Hybrid Solutions</div>
+    <div class="card">Mobile App Development</div>
+    <div class="card">ERP & Business Systems</div>
+    <div class="card">IoT & Ticketing Systems</div>
+    <div class="card">Infrastructure & Cyber Security</div>
+  </div>
+</section>
 
-    <section id="pricing" class="section">
-        <h2>Pricing Plans</h2>
-        <div class="pricing">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <p class="price">$499/mo</p>
-                <ul>
-                    <li>Basic software development</li>
-                    <li>Standard cloud hosting</li>
-                    <li>Email support</li>
-                </ul>
-                <a href="#contact" class="btn-primary">Get Started</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Professional</h3>
-                <p class="price">$999/mo</p>
-                <ul>
-                    <li>Advanced software development</li>
-                    <li>ERP & System integration</li>
-                    <li>Priority support</li>
-                </ul>
-                <a href="#contact" class="btn-primary">Get Started</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <p class="price">Custom</p>
-                <ul>
-                    <li>Full-scale solutions</li>
-                    <li>On-prem & cloud deployment</li>
-                    <li>Dedicated account manager</li>
-                </ul>
-                <a href="#contact" class="btn-primary">Contact Us</a>
-            </div>
-        </div>
-    </section>
+<section class="why-us">
+  <div class="container">
+    <h3>Why AYA Mesh?</h3>
+    <p>
+      ✔ Vendor-neutral architecture<br>
+      ✔ Security-first design<br>
+      ✔ Scalable & future-ready<br>
+      ✔ Cost-efficient enterprise solutions
+    </p>
+  </div>
+</section>
 
-    <section id="clients" class="section">
-        <h2>Our Clients</h2>
-        <div class="clients">
-            <img src="https://via.placeholder.com/120x60?text=Client+1" alt="Client 1">
-            <img src="https://via.placeholder.com/120x60?text=Client+2" alt="Client 2">
-            <img src="https://via.placeholder.com/120x60?text=Client+3" alt="Client 3">
-            <img src="https://via.placeholder.com/120x60?text=Client+4" alt="Client 4">
-        </div>
-    </section>
+<footer>
+  <p>© 2025 AYA Mesh Co. Ltd. All rights reserved.</p>
+</footer>
 
-    <section id="testimonials" class="section">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials">
-            <div class="testimonial-card active">
-                <p>"AYAMesh transformed our business processes with their ERP integration. Exceptional service!"</p>
-                <strong>- John Doe, CEO</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>"Their cloud solutions improved our team's productivity significantly. Highly recommended!"</p>
-                <strong>- Jane Smith, CTO</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>"Professional, reliable, and innovative – AYAMesh exceeded our expectations."</p>
-                <strong>- Michael Lee, COO</strong>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Get in Touch</h2>
-        <p>Email: <a href="mailto:support@ayamesh.com">support@ayamesh.com</a></p>
-        <p>Phone: +95 XXX XXX XXX</p>
-    </section>
-
-    <footer>
-        <p>© 2025 AYAMesh. All Rights Reserved.</p>
-        <p>Follow us:
-            <a href="#">LinkedIn</a> |
-            <a href="#">Twitter</a> |
-            <a href="#">Facebook</a>
-        </p>
-    </footer>
-
-    <script>
-        // Scroll reveal animation
-        const cards = document.querySelectorAll('.card');
-
-        const revealOnScroll = () => {
-            const triggerBottom = window.innerHeight * 0.85;
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < triggerBottom) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                    card.style.transition = 'all 0.6s ease-out';
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-
-        // Testimonials slider
-        const testimonials = document.querySelectorAll('.testimonial-card');
-        let currentTestimonial = 0;
-
-        const showTestimonial = (index) => {
-            testimonials.forEach((t, i) => {
-                t.classList.remove('active');
-                if (i === index) t.classList.add('active');
-            });
-        };
-
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-    </script>
-
+<script src="assets/js/main.js"></script>
 </body>
 </html>
