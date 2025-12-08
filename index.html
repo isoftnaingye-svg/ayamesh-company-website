@@ -4,205 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AYA Mesh Co. Ltd | Digital Infrastructure & Cloud Solutions</title>
+<title>AYA Mesh Co. Ltd | Digital Infrastructure & Cloud Engineering</title>
 
 <style>
-/* ========================
-   THEME VARIABLES
-======================== */
-:root {
-  --bg: #f8fafc;
-  --text: #0f172a;
-  --card: #ffffff;
-  --primary: #0b1c2d;
-  --accent: #00e5ff;
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --primary:#0b1c2d;
+  --accent:#00cfe8;
+  --card:#f8fafc;
+  --border:#e5e7eb;
 }
 
-.dark {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --card: #1e293b;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
 }
 
-/* ========================
-   GLOBAL RESET
-======================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
 }
 
-/* ========================
-   LAYOUT
-======================== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+/* ---------- NAV ---------- */
+header{
+  background:#ffffff;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:99;
 }
 
-/* ========================
-   NAVIGATION
-======================== */
-header {
-  background: var(--primary);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
+.logo{
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--primary);
 }
 
-.logo {
-  color: var(--accent);
-  font-size: 1.6rem;
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:0.95rem;
 }
 
-nav {
-  display: flex;
-  align-items: center;
+nav a:hover{
+  color:var(--primary);
 }
 
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 0.95rem;
+.menu{
+  display:flex;
 }
 
-.btn {
-  background: var(--accent);
-  color: #000;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
+.toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
+/* ---------- HERO ---------- */
+.hero{
+  padding:100px 0 80px;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
 }
 
-.theme-btn {
-  background: none;
-  border: none;
-  color: white;
-  margin-left: 15px;
-  font-size: 18px;
-  cursor: pointer;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
 }
 
-/* ========================
-   HERO
-======================== */
-.hero {
-  background: linear-gradient(135deg, #0b1c2d, #102a43);
-  color: white;
-  padding: 90px 20px;
-  text-align: center;
+.hero h1{
+  font-size:3rem;
+  line-height:1.2;
+  margin-bottom:20px;
 }
 
-.hero h1 {
-  font-size: 2.7rem;
+.hero p{
+  color:var(--muted);
+  font-size:1.05rem;
+  margin-bottom:32px;
 }
 
-.hero p {
-  margin: 15px 0 25px;
-  opacity: 0.9;
+.btn{
+  display:inline-block;
+  background:var(--primary);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:6px;
+  font-size:0.95rem;
+  text-decoration:none;
 }
 
-.large {
-  font-size: 1.1rem;
+/* ---------- SERVICES ---------- */
+.section{
+  padding:90px 0;
 }
 
-/* ========================
-   SERVICES
-======================== */
-.services {
-  padding: 70px 0;
+.section h2{
+  font-size:2rem;
+  margin-bottom:14px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+.section p{
+  color:var(--muted);
+  max-width:700px;
 }
 
-.card {
-  background: var(--card);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  transition: 0.3s;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  margin-top:40px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:32px;
 }
 
-/* ========================
-   WHY US
-======================== */
-.why {
-  background: var(--primary);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
+.card h3{
+  font-size:1.05rem;
+  margin-bottom:10px;
 }
 
-/* ========================
-   FOOTER
-======================== */
-footer {
-  background: #020617;
-  color: #94a3b8;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+.card span{
+  color:var(--muted);
+  font-size:0.95rem;
 }
 
-/* ========================
-   MOBILE
-======================== */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+/* ---------- WHY ---------- */
+.why{
+  background:var(--primary);
+  color:white;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.why-box{
+  background:rgba(255,255,255,0.08);
+  padding:28px;
+  border-radius:10px;
+  font-size:0.95rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  border-top:1px solid var(--border);
+  padding:30px 0;
+  font-size:0.85rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:72px;
+    right:0;
+    background:#fff;
+    width:100%;
+    display:none;
+    flex-direction:column;
+    border-bottom:1px solid var(--border);
   }
 
-  nav {
-    position: absolute;
-    top: 65px;
-    right: 0;
-    width: 100%;
-    background: var(--primary);
-    display: none;
-    flex-direction: column;
-    text-align: center;
+  nav a{
+    padding:16px;
+    border-top:1px solid var(--border);
+    margin:0;
   }
 
-  nav a {
-    padding: 15px;
-    margin: 0;
-    border-top: 1px solid rgba(255,255,255,.1);
+  .menu{
+    display:none;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .toggle{
+    display:block;
   }
 }
 </style>
@@ -211,69 +221,90 @@ footer {
 <body>
 
 <header>
-  <div class="container navbar">
-    <h2 class="logo">AYA Mesh</h2>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav id="menu">
+  <div class="container nav">
+    <div class="logo">AYA Mesh Co. Ltd</div>
+    <div class="toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
       <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#solutions">Solutions</a>
-      <a href="#contact" class="btn">Contact</a>
-      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>Secure Digital Infrastructure & Cloud Solutions</h1>
-    <p>
-      On-Prem • Private Cloud • ERP • Mobile Apps • IoT • Cyber Security
-    </p>
-    <a href="#services" class="btn large">Explore Our Services</a>
+  <div class="container hero-grid">
+    <div>
+      <h1>Enterprise Digital Infrastructure & Cloud Engineering</h1>
+      <p>
+        AYA Mesh designs, deploys, and secures mission-critical systems —
+        from on-prem private cloud to IoT and enterprise platforms.
+      </p>
+      <a href="#services" class="btn">Explore Capabilities</a>
+    </div>
   </div>
 </section>
 
-<section id="services" class="services">
-  <div class="container grid">
-    <div class="card">On-Prem & Private Cloud Software</div>
-    <div class="card">Cloud & Hybrid Infrastructure</div>
-    <div class="card">Mobile Application Development</div>
-    <div class="card">ERP & Business Systems</div>
-    <div class="card">Private Mail Server Deployment</div>
-    <div class="card">Infrastructure Design & Cyber Security</div>
-    <div class="card">Media & Embedded Device Software</div>
-    <div class="card">IoT & Smart Ticketing Systems</div>
+<section id="services" class="section">
+  <div class="container">
+    <h2>Core Services</h2>
+    <p>
+      We provide end-to-end technology solutions focusing on reliability,
+      security, and long-term scalability.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>On-Prem & Private Cloud</h3>
+        <span>Secure, fully controlled infrastructure for enterprises</span>
+      </div>
+      <div class="card">
+        <h3>Cloud & Hybrid Architecture</h3>
+        <span>Vendor-neutral cloud design and migration</span>
+      </div>
+      <div class="card">
+        <h3>Mobile App Development</h3>
+        <span>Enterprise Android & iOS applications</span>
+      </div>
+      <div class="card">
+        <h3>ERP & Business Systems</h3>
+        <span>Operational automation and system integration</span>
+      </div>
+      <div class="card">
+        <h3>IoT & Ticketing Systems</h3>
+        <span>Smart devices, data platforms, and monitoring</span>
+      </div>
+      <div class="card">
+        <h3>Infrastructure & Cyber Security</h3>
+        <span>Secure networks, compliance, and monitoring</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="why" id="solutions">
+<section class="section why" id="solutions">
   <div class="container">
-    <h2>Why AYA Mesh Co. Ltd</h2>
-    <p>
-      ✔ Security-first architecture<br>
-      ✔ Vendor-neutral solutions<br>
-      ✔ Enterprise scalability<br>
-      ✔ Cost-efficient engineering
-    </p>
+    <h2>Why AYA Mesh</h2>
+
+    <div class="why-grid">
+      <div class="why-box">Vendor-neutral architecture</div>
+      <div class="why-box">Security-first engineering approach</div>
+      <div class="why-box">Scalable enterprise-grade solutions</div>
+      <div class="why-box">Cost-efficient long-term design</div>
+    </div>
   </div>
 </section>
 
 <footer id="contact">
-  <p>
-    📧 contact@ayamesh.com | 🌐 AYA Mesh Co. Ltd<br>
-    © 2025 All Rights Reserved
-  </p>
+  © 2025 AYA Mesh Co. Ltd. All rights reserved.
 </footer>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("dark");
+function toggleMenu(){
+  const nav = document.getElementById("nav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+  nav.style.flexDirection = "column";
 }
 </script>
 
