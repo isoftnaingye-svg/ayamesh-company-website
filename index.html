@@ -4,12 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>AYA Mesh Co. Ltd | Infrastructure, Cloud & Medical Technology</title>
+<title>AYA Mesh Co. Ltd | Infrastructure, Cloud, Mobile & Medical Technology</title>
 
-<meta name="description" content="AYA Mesh Co. Ltd delivers enterprise infrastructure, cloud engineering, automation software, and medical imaging device solutions." />
+<meta name="description" content="AYA Mesh Co. Ltd delivers enterprise infrastructure, seamless mobile app development, automation platforms, and medical imaging software." />
 
 <style>
-/* ================= THEME ================= */
 :root{
   --bg:#ffffff;
   --text:#0f172a;
@@ -20,123 +19,41 @@
   --border:#e5e7eb;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,"Segoe UI",Arial,sans-serif;}
 
-body{
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
+body{background:var(--bg);color:var(--text);line-height:1.7;}
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 28px;
-}
+.container{max-width:1200px;margin:auto;padding:0 28px;}
 
-/* ============ ANIMATIONS ============ */
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.reveal{animation:fadeUp .9s ease both;}
 
-.reveal{
-  animation:fadeUp 0.9s ease both;
-}
-
-/* ============ NAV ============ */
 header{
-  background:rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
   border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:100;
+  position:sticky;top:0;z-index:100;
 }
 
-.nav{
-  height:76px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+.nav{height:76px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.35rem;font-weight:700;color:var(--primary);}
+nav{display:flex;}
+nav a{margin-left:32px;font-size:.95rem;color:var(--muted);text-decoration:none;}
+nav a:hover{color:var(--primary);}
+.toggle{display:none;font-size:26px;cursor:pointer;}
 
-.logo{
-  font-size:1.35rem;
-  font-weight:700;
-  color:var(--primary);
-}
-
-nav{
-  display:flex;
-}
-
-nav a{
-  margin-left:32px;
-  font-size:0.95rem;
-  color:var(--muted);
-  text-decoration:none;
-}
-
-nav a:hover{ color:var(--primary); }
-
-.toggle{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* ============ HERO ============ */
 .hero{
   padding:120px 0;
   background:linear-gradient(180deg,#ffffff,#f1f5f9);
 }
+.hero h1{font-size:3rem;line-height:1.15;max-width:950px;}
+.hero p{margin-top:24px;font-size:1.08rem;max-width:820px;color:var(--muted);}
+.btn{display:inline-block;margin-top:38px;background:var(--primary);color:#fff;padding:14px 28px;border-radius:8px;font-size:.95rem;text-decoration:none;}
 
-.hero h1{
-  font-size:3.1rem;
-  line-height:1.15;
-  max-width:900px;
-}
+.section{padding:100px 0;}
+.section h2{font-size:2.1rem;}
+.section p{margin-top:14px;max-width:820px;color:var(--muted);}
 
-.hero p{
-  margin-top:24px;
-  font-size:1.08rem;
-  max-width:780px;
-  color:var(--muted);
-}
-
-.btn{
-  display:inline-block;
-  margin-top:38px;
-  background:var(--primary);
-  color:#fff;
-  padding:14px 28px;
-  border-radius:8px;
-  font-size:0.95rem;
-  text-decoration:none;
-}
-
-/* ============ SECTIONS ============ */
-.section{
-  padding:100px 0;
-}
-
-.section h2{
-  font-size:2.1rem;
-}
-
-.section p{
-  margin-top:14px;
-  max-width:780px;
-  color:var(--muted);
-}
-
-/* ============ CARDS ============ */
 .cards{
   margin-top:52px;
   display:grid;
@@ -148,65 +65,38 @@ nav a:hover{ color:var(--primary); }
   background:var(--card);
   border:1px solid var(--border);
   border-radius:16px;
-  padding:38px;
+  padding:40px;
 }
 
-/* ============ HEALTHCARE ============ */
-.health{
-  background:#f9fafb;
-}
-
-/* ============ INDUSTRIES ============ */
-.industries{
-  background:linear-gradient(180deg,#ffffff,#f8fafc);
-}
+.health{background:#f9fafb;}
+.usecases{background:linear-gradient(180deg,#ffffff,#f8fafc);}
 
 .industry{
-  padding:30px;
+  padding:34px;
+  background:#fff;
   border-left:4px solid var(--accent);
-  background:white;
-  border-radius:10px;
+  border-radius:12px;
 }
 
-/* ============ COMPLIANCE ============ */
-.compliance{
-  background:var(--primary);
-  color:#fff;
-}
+.compliance{background:var(--primary);color:#fff;}
+.compliance p{color:#e5e7eb;}
 
-.compliance p{ color:#e5e7eb; }
-
-/* ============ FOOTER ============ */
 footer{
   border-top:1px solid var(--border);
   padding:36px 0;
-  font-size:0.85rem;
+  font-size:.85rem;
   color:var(--muted);
   text-align:center;
 }
 
-/* ============ MOBILE ============ */
 @media(max-width:900px){
-  .hero h1{ font-size:2.3rem; }
+  .hero h1{font-size:2.3rem;}
 }
 
 @media(max-width:768px){
-  nav{
-    position:absolute;
-    top:76px;
-    right:0;
-    width:100%;
-    background:#fff;
-    display:none;
-    flex-direction:column;
-    border-bottom:1px solid var(--border);
-  }
-  nav a{
-    padding:18px 28px;
-    border-top:1px solid var(--border);
-    margin:0;
-  }
-  .toggle{ display:block; }
+  nav{position:absolute;top:76px;right:0;width:100%;background:#fff;display:none;flex-direction:column;border-bottom:1px solid var(--border);}
+  nav a{padding:18px 28px;border-top:1px solid var(--border);margin:0;}
+  .toggle{display:block;}
 }
 </style>
 </head>
@@ -220,7 +110,8 @@ footer{
     <nav id="nav">
       <a href="#">Home</a>
       <a href="#services">Services</a>
-      <a href="#industries">Industries</a>
+      <a href="#mobile">Mobile</a>
+      <a href="#solutions">Solutions</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -229,32 +120,58 @@ footer{
 <section class="hero">
   <div class="container reveal">
     <h1>
-      Enterprise Infrastructure, Cloud Engineering  
-      & Medical Technology Software
+      Infrastructure, Cloud, Mobile &<br/>
+      Medical Technology Solutions
     </h1>
     <p>
-      AYA Mesh Co. Ltd delivers secure, scalable digital infrastructure,
-      automation platforms, and medical imaging software for
-      mission-critical environments.
+      AYA Mesh Co. Ltd designs and builds secure digital infrastructure,
+      seamless mobile applications, automation systems, and
+      medical imaging software for mission-critical environments.
     </p>
-    <a href="#services" class="btn">Explore Our Capabilities</a>
+    <a href="#services" class="btn">Explore Capabilities</a>
   </div>
 </section>
 
 <section id="services" class="section">
   <div class="container reveal">
-    <h2>Core Services</h2>
-    <p>
-      We engineer systems where reliability, security, and long-term
-      maintainability are mandatory — not optional.
-    </p>
+    <h2>Core Engineering Services</h2>
+    <p>End-to-end technology services engineered for reliability, security, and scalability.</p>
 
     <div class="cards">
       <div class="card">On-Prem & Private Cloud Infrastructure</div>
       <div class="card">Cloud & Hybrid Architecture</div>
-      <div class="card">ERP & Automation Platforms</div>
+      <div class="card">ERP & Enterprise Automation Platforms</div>
       <div class="card">IoT & Smart Ticketing Systems</div>
       <div class="card">Infrastructure & Cyber Security</div>
+    </div>
+  </div>
+</section>
+
+<section id="mobile" class="section">
+  <div class="container reveal">
+    <h2>Seamless Mobile App Development</h2>
+    <p>
+      We design and develop high-performance mobile applications
+      that integrate seamlessly with enterprise systems,
+      cloud platforms, IoT devices, and medical equipment.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        📱 <strong>Enterprise Mobile Apps</strong><br/><br/>
+        Secure workforce apps, dashboards, and operational tools
+        connected to ERP, cloud, and on-prem infrastructure.
+      </div>
+      <div class="card">
+        🏥 <strong>Healthcare & Patient Companion Apps</strong><br/><br/>
+        Mobile apps designed for clinical workflows,
+        device integration, and secure data handling.
+      </div>
+      <div class="card">
+        🔌 <strong>Device & IoT Integrated Apps</strong><br/><br/>
+        Mobile applications that connect with IoT,
+        automation platforms, and medical imaging devices.
+      </div>
     </div>
   </div>
 </section>
@@ -263,8 +180,8 @@ footer{
   <div class="container reveal">
     <h2>Medical Imaging & Healthcare Automation</h2>
     <p>
-      Software solutions for medical imaging devices and healthcare automation,
-      designed with operational safety and system integrity in mind.
+      Software solutions for medical imaging devices and healthcare automation
+      systems, built with safety, reliability, and system integrity in mind.
     </p>
 
     <div class="cards">
@@ -275,27 +192,37 @@ footer{
   </div>
 </section>
 
-<section id="industries" class="section industries">
+<section id="solutions" class="section usecases">
   <div class="container reveal">
-    <h2>Industries We Serve</h2>
+    <h2>Solution Use Cases</h2>
 
     <div class="cards">
-      <div class="industry">🏥 Healthcare & Hospitals</div>
-      <div class="industry">🧪 Medical Device Manufacturers (OEM)</div>
-      <div class="industry">🏢 Enterprise IT & Data Centers</div>
-      <div class="industry">🏛 Government & Public Sector</div>
+      <div class="industry">
+        🏥 <strong>Hospital & Healthcare Systems</strong><br/><br/>
+        Imaging software, clinical automation, mobile apps,
+        and secure infrastructure for hospitals and clinics.
+      </div>
+      <div class="industry">
+        🧪 <strong>Medical Device OEMs</strong><br/><br/>
+        Embedded and companion software for imaging devices,
+        automation systems, and device-to-cloud platforms.
+      </div>
+      <div class="industry">
+        🏢 <strong>Enterprise & Government</strong><br/><br/>
+        Secure infrastructure, ERP, IoT ticketing,
+        and mobile workforce solutions.
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section compliance">
   <div class="container reveal">
-    <h2>Quality, Security & Compliance Mindset</h2>
+    <h2>Quality, Security & Engineering Discipline</h2>
     <p>
-      AYA Mesh follows secure-by-design engineering principles and
-      industry best practices. Our systems are developed with
-      auditability, data protection, and operational safety in mind,
-      aligned with applicable standards and regulatory environments.
+      AYA Mesh applies secure-by-design principles, structured
+      development processes, and industry best practices aligned
+      with regulated and mission-critical environments.
     </p>
   </div>
 </section>
